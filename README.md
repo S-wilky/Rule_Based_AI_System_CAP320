@@ -173,6 +173,8 @@ Error: Ability scores exceed allowed total!
 ### Project Overview:
 This project prompts the user to create a D&D character by asking for their name, ability scores 1 by 1, race, subrace (if applicable), class, and background. It uses logic to ensure that you don't go over the maximums or below the minimum scores when selecting ability scores. It also checks if any subraces apply to the selected race and displays only those options if so. Finally, it calculates your hit points and ability score modifiers based on the input ability scores and racial bonuses, then adds all proficiencies and features provided by your race, class, and background.
 
+Note: There are no libraries required, so I did not include a requirements.txt file, but the 3 files in the modules folder (data.py, character.py, and rules.py) are required.
+
 ### Challenges:
 **Order of Operations:**
   - When I first copied the code over from ChatGPT, it didn't work because a piece of the code for picking a class required abilitiy scores to already be in place. I had to move that piece of code in front for it to work properly
