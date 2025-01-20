@@ -65,8 +65,6 @@ The D&D Character Creator system will follow these rules:
     - The system will show all available backgrounds. You must type in one from the list.
     - Grant specific skill proficiencies (e.g., "History" and "Religion" for Acolyte).
     - Include background-specific features (e.g., "Shelter of the Faithful").
-    - Update character proficiencies.
-
 
 # Part 3: Rules/Logic for the Chosen System
 ## Sample input and output:
