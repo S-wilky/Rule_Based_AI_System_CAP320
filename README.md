@@ -69,14 +69,108 @@ The D&D Character Creator system will follow these rules:
 
 
 # Part 3: Rules/Logic for the Chosen System
-Sample input and output:
+## Sample input and output:
 
-Enter your ingredients (comma-separated): chicken, rice, soy sauce You are close to making Chicken Fried Rice! Missing: garlic.
+### 1. Selecting a race with a subrace
+```
+Enter your character's name: Legolas
 
-Enter your ingredients (comma-separated): garlic, soy sauce No recipes match. Try adding more ingredients.
+Enter your ability scores. Rules:
+1. You have 27 points to distribute using point-buy.
+2. Scores must be between 8 and 15 (before racial bonuses).
+Score costs - 8: 0, 9: 1, 10: 2, 11: 3, 12: 4, 13: 5, 14: 7, 15: 9
+Enter Strength score (8-15): 8
+Points left:  27
+Enter Dexterity score (8-15): 14
+Points left:  20
+Enter Constitution score (8-15): 14
+Points left:  13
+Enter Intelligence score (8-15): 10
+Points left:  11
+Enter Wisdom score (8-15): 15
+Points left:  2
+Enter Charisma score (8-15): 10
+Points left:  0
+Available races: Dwarf, Elf, Halfling, Human, Dragonborn, Gnome, Half-Elf, Half-Orc, Tiefling
+Choose a race: Elf
+Available subraces: High Elf, Wood Elf, Drow
+Choose a subrace: Wood Elf
+Available classes: Barbarian, Bard, Cleric, Druid, Fighter, Monk, Paladin, Ranger, Rogue, Sorcerer, Warlock, Wizard
+Choose a class: Ranger
+Available backgrounds: Acolyte, Charlatan, Criminal, Entertainer
+Choose a background: Charlatan
 
-Enter your ingredients (comma-separated): pasta, tomatoes, garlic, olive oil You can make Spaghetti Pomodoro!
+Character Creation Complete!
+Name: Legolas
+Race: Elf (Wood Elf)
+Class: Ranger
+Background: Charlatan
+Ability Scores: {'Strength': 8, 'Dexterity': 16, 'Constitution': 14, 'Intelligence': 10, 'Wisdom': 16, 'Charisma': 10}
+Modifiers: {'Strength': -1, 'Dexterity': 3, 'Constitution': 2, 'Intelligence': 0, 'Wisdom': 3, 'Charisma': 0}
+Hit Points: 12
+Proficiencies: Light armor, Medium armor, Shields, Simple weapons, Martial weapons, Deception, Sleight of Hand
+Features: Darkvision, Keen Senses, Fey Ancestry, Trance, Favored Enemy, Natural Explorer, Fighting Style, Primeval Awareness, False Identity
+```
+### 2. Selecting a race without a subrace
+```
+Enter your character's name: Aragorn
 
+Enter your ability scores. Rules:
+1. You have 27 points to distribute using point-buy.
+2. Scores must be between 8 and 15 (before racial bonuses).
+Score costs - 8: 0, 9: 1, 10: 2, 11: 3, 12: 4, 13: 5, 14: 7, 15: 9
+Enter Strength score (8-15): 12
+Points left:  23
+Enter Dexterity score (8-15): 14
+Points left:  16
+Enter Constitution score (8-15): 14
+Points left:  9
+Enter Intelligence score (8-15): 10
+Points left:  7
+Enter Wisdom score (8-15): 12
+Points left:  3
+Enter Charisma score (8-15): 11
+Points left:  0
+Available races: Dwarf, Elf, Halfling, Human, Dragonborn, Gnome, Half-Elf, Half-Orc, Tiefling
+Choose a race: Human
+Available classes: Barbarian, Bard, Cleric, Druid, Fighter, Monk, Paladin, Ranger, Rogue, Sorcerer, Warlock, Wizard
+Choose a class: Fighter
+Available backgrounds: Acolyte, Charlatan, Criminal, Entertainer
+Choose a background: Acolyte
+
+Character Creation Complete!
+Name: Aragorn
+Race: Human (Standard)
+Class: Fighter
+Background: Acolyte
+Ability Scores: {'Strength': 13, 'Dexterity': 15, 'Constitution': 15, 'Intelligence': 11, 'Wisdom': 13, 'Charisma': 12}
+Modifiers: {'Strength': 1, 'Dexterity': 2, 'Constitution': 2, 'Intelligence': 0, 'Wisdom': 1, 'Charisma': 1}
+Hit Points: 12
+Proficiencies: All armor, Shields, Simple weapons, Martial weapons, Insight, Religion
+Features: , Fighting Style, Second Wind, Action Surge, Martial Archetype, Shelter of the Faithful
+```
+### 3. Going over the ability score limit
+```
+Enter your character's name: Shane
+
+Enter your ability scores. Rules:
+1. You have 27 points to distribute using point-buy.
+2. Scores must be between 8 and 15 (before racial bonuses).
+Score costs - 8: 0, 9: 1, 10: 2, 11: 3, 12: 4, 13: 5, 14: 7, 15: 9
+Enter Strength score (8-15): 15
+Points left:  18
+Enter Dexterity score (8-15): 15
+Points left:  9
+Enter Constitution score (8-15): 15
+Points left:  0
+Enter Intelligence score (8-15): 15
+Points left:  -9
+Enter Wisdom score (8-15): 15
+Points left:  -18
+Enter Charisma score (8-15): 15
+Points left:  -27
+Error: Ability scores exceed allowed total!
+```
 # Part 4: Reflection
 ### Project Overview:
 This project involved designing a practical, rule-based system to recommend recipes based on user inputs. The system uses logical conditions (e.g., exact and partial matches) to evaluate user-provided ingredients against recipes in the dataset.
