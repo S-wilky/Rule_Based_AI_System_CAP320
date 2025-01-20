@@ -25,7 +25,7 @@
     - Suggestions for unassigned stats or traits.
     - Basic output with character sheet details.
 
-### Chosen Idea: Character Creator for D&D 5e
+### Chosen Idea: Character Creator for D&D 5e (Dungeons & Dragons 5th Edition)
 
 **Justification:** I chose this project because I am already familiar with the rules so I can help guide the coding. It also includes all the requirements of the assignment including user input for character choices, conditional logic to ensure those choices match the game rules, and output of errors or user choices based on that logic.
 
@@ -173,10 +173,14 @@ Error: Ability scores exceed allowed total!
 ```
 # Part 4: Reflection
 ### Project Overview:
-This project involved designing a practical, rule-based system to recommend recipes based on user inputs. The system uses logical conditions (e.g., exact and partial matches) to evaluate user-provided ingredients against recipes in the dataset.
+This project prompts the user to create a D&D character by asking for their name, ability scores 1 by 1, race, subrace (if applicable), class, and background. It uses logic to ensure that you don't go over the maximums or below the minimum scores when selecting ability scores. It also checks if any subraces apply to the selected race and displays only those options if so. Finally, it calculates your hit points and ability score modifiers based on the input ability scores and racial bonuses, then adds all proficiencies and features provided by your race, class, and background.
 
 ### Challenges:
-Handling Partial Matches:
-Deciding on a threshold (75%) that balances flexibility with accuracy was challenging.
-Common Ingredients:
-Ensuring common ingredients like salt and water don’t skew the results. I resolved this by excluding them from the missing ingredient list.
+**Order of Operations:**
+  - When I first copied the code over from ChatGPT, it didn't work because a piece of the code for picking a class required abilitiy scores to already be in place. I had to move that piece of code in front for it to work properly
+**Not Adding Racial Bonus:**
+  - Initially, the code was calculating the modifiers before adding the bonus ability scores for the selected race, so that bonus didn't translate to the modifier.
+**Inconsistencies When Editing:**
+  - The sample code only gave me a couple classes, races and backhrounds, so I asked it to provide all options from the rules. However, when it did so, it changed the structure of the data so that it no longer worked with the rest of the code. This required me to ask chatGPT to rewrite some things as well as me manually editing some things when ChatGPT didn't understand what I asked for.
+**ChatGPT Character Limit:**
+  - ChatGPT can only produce so much code at once, so when I tried to get it to expand the backgrounds, it only got a few before it reached the character limit.
